@@ -1,14 +1,17 @@
 
-function create(datos){ 
+function create(nombre_evento){ 
 
     // Filtrar datos
 
-    var data = datos; 
-    $.ajax({
-        url: "./functions/create.php",
-        context: data
-      }).done(function() {
+    var data = nombre_evento; 
 
-      });
+    $.ajax({
+      url: './functions/create.php',
+      method: 'POST',
+      data: {nombre: data},
+      success: function(response) {
+        console.log('La solicitud fue exitosa!');
+      },
+    });
 
 }
