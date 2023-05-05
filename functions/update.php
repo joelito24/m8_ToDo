@@ -2,13 +2,9 @@
 
 //este metodo es para actualizar un anuncio
 
-$datos = $_POST["data"];
+$id = $_POST["id"];
+$evento = $_POST["nombre"];
+$done = $_POST["done"];
 
-$anun = $_POST['textoanuncio'];
-$cat = $_POST['categoria'];
-$precio = $_POST['precio'];
-
-    $query = $db->prepare("UPDATE tanuncios SET textoanuncio = :ta, categoria = :cat, precio = :p WHERE id = :id");
-    $query->execute(['ta'=>$anun, 'cat'=>$cat, 'p'=>$precio, 'id'=>$datos['id']]);
-
-    echo json_encode($response);
+    $query = $db->prepare("UPDATE tareas SET nombre_tarea = :nt, done = :d WHERE id = :id");
+    $query->execute(['nt'=>$evento, 'd'=>$done, 'id'=>$id]);
