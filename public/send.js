@@ -15,3 +15,18 @@ function create(nombre_evento){
     });
 
 }
+
+function update(nombre, id, done){ 
+
+    // Filtrar datos 
+
+    $.ajax({
+      url: './functions/update.php',
+      method: 'POST',
+      data: {nombre: nombre, id: id, done: done},
+      success: function(response) {
+        console.log('La solicitud fue exitosa!');
+      },
+    });
+
+}
