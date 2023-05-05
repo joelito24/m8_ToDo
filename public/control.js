@@ -10,5 +10,5 @@ form.addEventListener("submit",(e)=>{
     create(event.val());
 
     event.val("");
-    
+    location.reload();
 })
